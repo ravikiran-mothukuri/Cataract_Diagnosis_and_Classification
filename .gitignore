@@ -1,0 +1,31 @@
+# ML models
+*.keras
+
+# ALL images
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.bmp
+*.tiff
+
+# datasets / generated
+uploads/
+static/uploads/
+GUI/static/uploads/
+
+# notebooks
+.ipynb_checkpoints/
+
+# python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# node
+node_modules/
+dist/
+
+# mac
+.DS_Store

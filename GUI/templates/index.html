@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Image{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    <main class="form-container1">
+        <h1 class="form-title">Patient Details</h1>
+        <form class="user-form" action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+            <!-- Personal Information -->
+            <div class="user-details-container">
+                <div class="user-detail">
+                    <label for="name">Full Name: <span class="star-icon">*</span> </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="user-detail">
+                    <label for="age">Age: <span class="star-icon">*</span> </label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" required>
+                </div>
+                <div class="user-detail">
+                    <label for="gender">Gender: <span class="star-icon">*</span> </label>
+                    <select id="gender" name="gender"  required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="user-detail">
+                    <label for="dob">Date of Birth: <span class="star-icon">*</span> </label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="user-details-container">
+                <div class="user-detail">
+                    <label for="email">Email: <span class="star-icon">*</span> </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="user-detail">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" maxlength="10" >
+                </div>
+                <div class="user-detail">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter your address" rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- Medical Information -->
+            <div class="user-details-container">
+                <div class="user-detail">
+                    <label for="medical-history">Medical History:</label>
+                    <textarea id="medical-history" name="medical-history" placeholder="Describe any relevant medical history" rows="4"></textarea>
+                </div>
+                <div class="user-detail">
+                    <label for="allergies">Allergies: <span class="star-icon">*</span> </label>
+                    <input type="text" id="allergies" name="allergies" placeholder="List any allergies" required>
+                </div>
+                <div class="user-detail">
+                    <label for="current-medications">Current Medications: <span class="star-icon">*</span> </label>
+                    <input type="text" id="current-medications" name="current-medications" placeholder="List current medications" required>
+                </div>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="input-box">
+                <label for="file" class="file-label">Choose an image (JPEG/PNG): <span class="star-icon">*</span> </label>
+                <input type="file" id="file" name="file" accept="image/*" required class="file-input">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </main>
+{% endblock %}

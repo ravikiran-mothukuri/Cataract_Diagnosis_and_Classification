@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %}Cataract Diagnosis{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="https://t3.ftcdn.net/jpg/08/76/00/26/240_F_876002611_c0gg5sCWs3gjMRASuLglPHT32DWsdt7D.jpg">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <main>
+      <header class="fixed-header">
+        <h1>Cataract Diagnosis and Classification</h1>
+      </header>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='js/FlashTimeOut.js') }}"></script>
+</body>
+
+</html>

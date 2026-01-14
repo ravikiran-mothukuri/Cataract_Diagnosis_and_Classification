@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../SQL"
+		},
+		{
+			"path": "../../Chat_App/client"
+		},
+		{
+			"path": "../../ProjectD"
+		},
+		{
+			"path": "../../../Downloads/Scrim-s01m59s"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DataScience",
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "xprotocol",
+					"enableSsl": "Disabled"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 33060,
+				"driver": "MySQL",
+				"name": "MYSQL server",
+				"database": "data",
+				"username": "root",
+				"password": "Ravikiran@123",
+				"connectionTimeout": 30
+			}
+		]
+	}
+}

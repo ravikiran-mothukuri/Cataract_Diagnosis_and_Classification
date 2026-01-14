@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <main class="form-container">
+        <h2 class="form-title">Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="" method="POST" class="login-form">
+            <div class="input-box">
+                <input type="text" placeholder="Username" name="username" required class="input-field">
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" required class="input-field">
+            </div>
+            <button type="submit" class="btn login-btn">Login</button>
+        </form>
+    </main>
+
+
+{% endblock %}
+

@@ -1,0 +1,22 @@
+<!-- result.html -->
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+    <a href="{{ url_for('export_data') }}" class="download-btn">Download Data</a>
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    
+    <main class="result-container">
+        {% if image_path %}
+        <div>
+            <!-- {{image_path}} -->
+            <img src="../{{image_path}}" alt="Uploaded Image" style="max-width: 300px; max-height: 300px;">
+        </div>
+        {% endif %}
+        <h1 class="result-title">Prediction Result</h1>
+        <h2 class="prediction-result">{{ result }}</h2>
+        <a href="{{ url_for('index') }}" class="btn">Upload Another Image</a>
+    </main>
+{% endblock %}

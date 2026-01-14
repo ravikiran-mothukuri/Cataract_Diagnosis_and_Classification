@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+
+    <main class="form-container">
+        <h2 class="form-title">Registration</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('register') }}" method="POST" class="login-form">
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Enter your username" required class="input-field">
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Create password" required class="input-field">
+            </div>
+            <div class="input-box">
+                <input type="password" name="confirm_password" placeholder="Confirm password" required class="input-field">
+            </div>
+            <div class="input-box policy">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I accept all terms & conditions</label>
+            </div>
+            <button type="submit" class="btn login-btn">Register Now</button>
+            <div class="text">
+                <p>Already have an account? <a href="{{ url_for('login') }}" class="login-link">Login now</a></p>
+            </div>
+        </form>
+    </main>
+
+{% endblock %}
